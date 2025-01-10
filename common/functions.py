@@ -32,11 +32,11 @@ def softmax(x):
     x = x - np.max(x, axis=-1, keepdims=True)   # オーバーフロー対策
     return np.exp(x) / np.sum(np.exp(x), axis=-1, keepdims=True)
 
-
+#2乗和誤差
 def sum_squared_error(y, t):
     return 0.5 * np.sum((y-t)**2)
 
-
+#交差エントロピー誤差
 def cross_entropy_error(y, t):
     if y.ndim == 1:
         t = t.reshape(1, t.size)
