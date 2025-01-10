@@ -38,7 +38,7 @@ network = init_network()
 batch_size = 100 # バッチの数
 accuracy_cnt = 0
 
-for i in range(0, len(x), batch_size):
+for i in range(0, len(x), batch_size): #range(start, end ,step)
     x_batch = x[i:i+batch_size]
     y_batch = predict(network, x_batch)
     p = np.argmax(y_batch, axis=1)
